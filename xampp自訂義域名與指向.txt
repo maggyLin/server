@@ -1,0 +1,24 @@
+This is a short and easy tutorial to change localhost to custom domain name (Laravel Project). 
+
+Steps:
+1. Download Xampp https://www.apachefriends.org/de/inde...
+
+2. Open hosts file (File location: C:\Windows\System32\Drivers\etc\hosts)
+ Add: 127.0.0.1 my.web.local
+ OR (指向2個) : 127.0.0.1 my.web.local you.web.local
+
+3. Open httpd-vhosts.conf (File location: C:\xampp\apache\conf\extra\httpd-vhosts.conf)
+ Add: 
+    <VirtualHost *:80>
+        ServerAdmin my.web.local
+        DocumentRoot "C:\xampp\htdocs\ucenter\public"
+        ServerName my.web.local
+    </VirtualHost>
+
+    <VirtualHost *:80>
+        ServerAdmin you.web.local
+        DocumentRoot "C:\xampp\htdocs\ucenter\public"
+        ServerName you.web.local
+    </VirtualHost>
+
+* 參考資料 : https://www.youtube.com/watch?v=9-BiizVfMKw
